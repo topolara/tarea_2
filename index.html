@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Visor EIT - Tarea</title>   
+
+	<!-- Hoja de estilos CSS de Leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>	
+	<!-- Biblioteca JS de Leaflet -->
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>	
+	<!-- Complemento Leaflet-providers -->
+	<script src="js/leaflet-providers.js"></script>	
+	
+	<!-- Hoja de estilos CSS adicionales -->
+	<link rel="stylesheet" href="css/estilos.css"/>	
+
+	<!-- En HTML: enlace a Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+	integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	crossorigin="anonymous" />
+	
+	<!-- Enlace a biblioteca JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+	</script>	
+	
+</head>
+<body>
+	<h1>Visor Giras EIT</h1>
+	<p>Visor de las giras de campo de la Escuela de Ingeniería Topográfica de la Universidad de Costa Rica</p>
+	<!-- Elemento div para contener el mapa -->
+	
+<div class="row">
+<div class="column" style="background-color:#7CC1FF;">
+<h2>Visor</h2>
+<p>Mapa de Costa Rica</p>
+	<div id="mapid"></div>	
+
+	
+</div>
+<div class="column" style="background-color:#DEF5E3;">
+<h2>Descripción y opciones</h2>
+<p>
+<h2>Escuela de Ingeniería Topográfica</h2>
+<p align="justify">
+<img src="datos/EIT.png" alt="EIT" height="80" width="80"> La Escuela de Ingeniería Topográfica de la Universidad de Costa Rica, ha tenido
+en los últimos años un crecimiento exponencial, tanto académicamente como en
+desarrollo e incorporación de nuevas tecnologías a la docencia y la investigación.
+Bajo este marco se ha creado una área de investigación con la adquisición y la
+incorporación de vehículos aéreos no tripulados, sistemas LiDAR y sensores
+remotos; esto a generado la necesidad de poder ofrecer a la comunidad
+académica, profesional y civil, un portal donde se pueda exponer información
+relevante y divulgar las áreas de acción de la EIT, que pueda ser consultada para
+la toma de decisiones de diferentes actores, por lo que se ha convertido, en una
+necesidad para la Escuela de Ingeniería Topográfica, con este objetivo se ha
+creado un área de laboratorio de investigación nombrado Laboratorio de
+Geomática, con el fin de generar información relevante.
+La maestría en Sistemas de Información Geográfica y Teledetección viene a
+convertirse en la mejor forma de poder alcanzar los objetivos planteados, por su
+relación directa con el área en estudio, pudiendo aportar todos los principales
+elementos académicos, para la realización y materialización de futuros proyectos.</p>
+<h2>Objetivo general</h2>
+<p align="justify">
+Implementar la infraestructura necesaria para la creación de un Sistema de
+Información Geográfica, como herramienta de visualización del impacto de la
+Escuela de Ingeniería Topográfica de la Universidad de Costa Rica en al ámbito
+nacional.</p><br>
+
+<!-- Controles para la opacidad de la capa de temperatura -->
+<h2>Control de transparencias para Capas de Calor</h2>
+	<h5>Opacidad de la capa Calor Docencia: <span id="span-opacityc">0.5</span></h5>
+	<input type='range' id='sld-opacityc' min='0' max='1' step='0.1' value='1' onchange='updateOpacityc();'>
+	<h5>Opacidad de la capa Calor Investigación: <span id="span-opacityi">0.5</span></h5>
+	<input type='range' id='sld-opacityi' min='0' max='1' step='0.1' value='1' onchange='updateOpacityi();'>
+	<h5>Opacidad de la capa Calor Acción Social: <span id="span-opacitya">0.5</span></h5>
+	<input type='range' id='sld-opacitya' min='0' max='1' step='0.1' value='1' onchange='updateOpacitya();'>
+</div>
+</div>
+<p>© Gustavo Lara Morales 2019</p>
+	
+	
+
+
+	
+	<!-- Código principal en JS -->
+	<script src="js/scripts.js"></script>	
+</body>
+</html>
